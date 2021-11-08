@@ -1,0 +1,186 @@
+/**
+ * Stock locations */
+.stock-locations-display {
+  border: 1px solid #ccc !important;
+  padding: 0.8em !important;
+  border-radius: 2px;
+  display: flex;
+}
+
+.stock-locations-display > span {
+  display: flex;
+  flex-direction: row;
+}
+
+.stock-locations-display * {
+  display: inline-block;
+  margin: 0px 5px;
+}
+
+.stock-locations-display > span:first-of-type {
+  flex: 1;
+}
+
+.stock-locations-display a.stock-locations-button {
+  margin: auto;
+}
+
+/**
+Selector
+*/
+.stock-locations-selector.modal * {
+  box-sizing: border-box;
+}
+
+.stock-locations-selector.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal Content (image) */
+.stock-locations-selector .modal-content {
+  right: 0;
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  display: block;
+  background-color: white;
+  width: 60%;
+  margin: 10px;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.stock-locations-selector .modal-content > div {
+  overflow: auto;
+}
+
+.stock-locations-selector ul {
+  margin: 5px;
+  overflow: auto;
+}
+
+.stock-locations-selector li input[type="radio"] {
+  margin: auto;
+}
+
+.stock-locations-selector li img {
+  display: inline;
+}
+
+.stock-locations-selector li h6 {
+  display: flex;
+  flex-direction: row;
+}
+
+.stock-locations-selector li h6 + div {
+  margin: auto 25px;
+}
+
+.stock-locations-selector li h6 span {
+  margin: auto 15px;
+}
+
+.stock-locations-selector li h6 span:last-of-type {
+  flex: 1;
+}
+
+.stock-locations-selector li {
+  border: 1px solid #ccc !important;
+  padding: 0.5em !important;
+  border-radius: 7px;
+  list-style: none;
+  margin: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.stock-locations-selector li:hover {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.stock-locations-selector h3,
+.stock-locations-selector p.txt-center,
+.stock-locations-selector button {
+  text-align: center;
+}
+
+.stock-locations-selector button {
+  margin: 5px;
+  border-radius: 7px;
+}
+
+.stock-locations-selector button.stock-locations-save {
+  bottom: 0;
+  position: absolute;
+  width: -webkit-fill-available;
+}
+
+/*admin bar*/
+.admin-bar .stock-locations-selector .modal-content {
+  margin-top: calc(32px + 5px);
+  height: calc(100vh - calc(32px + 10px));
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 500px) {
+  .stock-locations-selector .modal-content {
+    width: auto;
+    height: -webkit-fill-available;
+  }
+
+  /*admin bar*/
+  .admin-bar .stock-locations-selector .modal-content {
+    margin-top: 46px;
+    height: calc(100vh - calc(46px + 10px));
+  }
+}
+
+/**tooltip*/
+/* Tooltip container */
+.stock-locations-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.stock-locations-tooltip .stock-locations-tooltiptext {
+  visibility: hidden;
+  width: 320px;
+  top: 100%;
+  left: 50%;
+  margin-left: -160px;
+  background-color: white;
+  border: 1px solid #ccc !important;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  margin-bottom: 10px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 10000000;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.stock-locations-tooltip:hover .stock-locations-tooltiptext {
+  visibility: visible;
+}
+
+.stock-locations-tooltip .stock-locations-tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%; /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
