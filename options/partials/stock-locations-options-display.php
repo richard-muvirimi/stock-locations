@@ -33,7 +33,7 @@ if (isset($_GET['settings-updated'])) {
 <div class="wrap">
     <h1><?php esc_html_e(get_admin_page_title()); ?></h1>
     <form action="options.php" method="post">\
-        <input type="hidden" name="tab" value="<?= stock_locations_options_get_tab() ?>">
+        <input type="hidden" name="tab" value="<?php esc_attr_e(stock_locations_options_get_tab()) ?>">
         <?php
         // output security fields for the registered setting "wporg"
         settings_fields(stock_locations_slug() . "-options");

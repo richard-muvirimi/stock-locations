@@ -84,12 +84,12 @@ class Stock_locations_Public
 
             if (get_option('woocommerce_manage_stock') === 'yes') {
 
-                if (filter_input(INPUT_GET, "action") == $this->plugin_name) {
-                    $location = filter_input(INPUT_GET, stock_locations_slug());
+                if (filter_input(INPUT_GET, "action", FILTER_SANITIZE_URL) == $this->plugin_name) {
+                    $location = filter_input(INPUT_GET, stock_locations_slug(), FILTER_VALIDATE_INT) ?? false;
 
                     stock_locations_set_location($location);
 
-                    wp_redirect(filter_input(INPUT_GET, "redirect"));
+                    wp_redirect(filter_input(INPUT_GET, "redirect", FILTER_SANITIZE_URL));
                     exit;
                 }
             }

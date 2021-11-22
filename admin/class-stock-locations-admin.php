@@ -266,7 +266,7 @@ class Stock_locations_Admin
 
             if (in_array($typenow, wc_get_order_types('order-meta-boxes'), true)) {
 
-                $location = filter_input(INPUT_GET, $this->plugin_name . "-location", FILTER_SANITIZE_NUMBER_INT);
+                $location = filter_input(INPUT_GET, $this->plugin_name . "-location", FILTER_VALIDATE_INT);
 
                 // Filter the orders by the posted location.
                 if ($location) {

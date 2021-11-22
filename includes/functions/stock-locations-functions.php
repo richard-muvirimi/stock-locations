@@ -14,7 +14,7 @@ function stock_locations_get_location()
 {
 
     //saved to cookie if not logged in
-    $location = $_COOKIE[stock_locations_slug()] ?? false;
+    $location = filter_input(INPUT_COOKIE, stock_locations_slug(), FILTER_VALIDATE_INT) ?? false;
     if (function_exists("WC") && !is_admin() && is_user_logged_in()) {
 
         $location = get_transient(STOCK_LOCATIONS_SLUG . '-' . get_current_user_id() . '-location');
@@ -39,7 +39,7 @@ function stock_locations_set_location($location)
         set_transient(STOCK_LOCATIONS_SLUG . '-' . get_current_user_id() . '-location', $location, WEEK_IN_SECONDS);
 
         //clean up
-        if (!headers_sent() && isset($_COOKIE[stock_locations_slug()])) {
+        if (!headers_sent() && $location) {
             setcookie(stock_locations_slug(), "", time() - DAY_IN_SECONDS);
         }
     } else {

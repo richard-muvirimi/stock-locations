@@ -26,13 +26,13 @@ if (stock_locations_order_is_local_pickup($order)) :
 
     if ($location) :
 ?>
-        <div class="address">
-            <p>
-                <strong>
-                    <?php esc_html_e('Collection Location', $this->plugin_name) ?>:
-                </strong><?php echo wp_kses_post(get_post_field("post_title", $location));
-                            ?>
-            </p>
-        </div>
-    <?php endif; ?>
+<div class="address">
+    <p>
+        <strong>
+            <?php esc_html_e('Collection Location', $this->plugin_name) ?>:
+        </strong>
+        <?php echo wp_kses_post(get_post_field("post_title", $location)); ?>
+    </p>
+</div>
+<?php endif; ?>
 <?php endif; ?>
