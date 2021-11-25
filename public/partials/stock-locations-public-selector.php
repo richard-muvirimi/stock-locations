@@ -50,7 +50,7 @@
                                 <?php checked($location->ID, stock_locations_get_location() ?: $locations[0]->ID) ?>
                                 value="<?php esc_attr_e($location->ID) ?>">
                         </h6>
-                        <div><?php echo wpautop($location->post_excerpt) ?></div>
+                        <div><?php esc_html_e($location->post_excerpt) ?></div>
                     </label>
 
                 </li>

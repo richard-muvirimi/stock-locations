@@ -39,7 +39,7 @@ function stock_locations_set_location($location)
         set_transient(STOCK_LOCATIONS_SLUG . '-' . get_current_user_id() . '-location', $location, WEEK_IN_SECONDS);
 
         //clean up
-        if (!headers_sent() && $location) {
+        if (!headers_sent() && filter_input(INPUT_COOKIE, stock_locations_slug(), FILTER_VALIDATE_INT)) {
             setcookie(stock_locations_slug(), "", time() - DAY_IN_SECONDS);
         }
     } else {
